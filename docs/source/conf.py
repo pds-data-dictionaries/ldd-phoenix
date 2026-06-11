@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Example Namespace'
+project = 'Mars Phoenix Mission Dictionary'
 # copyright = overidden by CSS specified below
 author = 'NASA Planetary Data System'
 

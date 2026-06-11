@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Example Namespace Documentation
-===================================
+Mars Phoenix Mission Dictionary Documentation
+=============================================
 
 .. include:: intro.md
 
@@ -14,10 +14,3 @@ Example Namespace Documentation
     :caption: User Guide
 
     user/user-guide
-
-    
-.. toctree::
-    :maxdepth: 3
-    :caption: Detailed Documentation
-
-    detailed/example
