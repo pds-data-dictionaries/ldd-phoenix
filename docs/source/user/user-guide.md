@@ -12,7 +12,7 @@ The Mars Phoenix Mission Data Dictionary contains classes and attributes specifi
 Steward: Jennifer Ward, PDS Geosciences Node, jgward@wustl.edu  
   
 # Document Outline  
-1. [How to Include the Mars Phoenix Mission Data Dictionary in a PDS4 Label](#how-to-include-the-Mars Phoenix-Mission-data-dictionary-in-a-pds4-label)  
+1. [How to Include the Mars Phoenix Mission Data Dictionary in a PDS4 Label](#how-to-include-the-Mars-Phoenix-Mission-data-dictionary-in-a-pds4-label)  
 2. [Organization of Classes and Attributes](#organization-of-classes-and-attributes)  
     1. [Class Organization](#class-organization)  
     2. [Attributes by Class](#attributes-by-class)  
