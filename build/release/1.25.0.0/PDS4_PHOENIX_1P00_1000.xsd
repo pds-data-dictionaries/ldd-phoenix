@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- PDS4 XML/Schema for Name Space Id:phoenix  Version:1.0.0.0 - Fri Jun 19 17:42:49 UTC 2026 -->
+  <!-- Generated from the PDS4 Information Model Version 1.25.0.0 - System Build 16.0	 -->
+  <!-- *** This PDS4 product schema is an operational deliverable. *** -->
+  <!--                                                                           -->
+  <!--               Dictionary Stack                                            -->
+  <!-- 1.25.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.0.0.0 - phoenix: - Mars Phoenix Mission Dictionary                      -->
+  <!--                                                                           -->
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://pds.nasa.gov/pds4/mission/phoenix/v1"
+    xmlns:phoenix="http://pds.nasa.gov/pds4/mission/phoenix/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="1.0.0.0">
+ 
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1P00.xsd"/>
+ 
+  <xs:annotation>
+    <xs:documentation>
+
+        The Mars Phoenix mission dictionary contains classes and attributes specific to the Mars Phoenix mission and its instruments.
+        
+        Phoenix version 1.0.0.0
+        PDS Build 1.24.0.0 (1O00)
+        LDDTool version 15.3.0
+        
+        Created with lddtool -plJ PDS4_PHOENIX_IngestLDD.xml
+        
+        Change Log
+        6/11/2026 GEO/JGW Initial version
+        
+    
+    </xs:documentation>
+  </xs:annotation>
+ 
+  <xs:element name="Phoenix_Parameters" type="phoenix:Phoenix_Parameters"> </xs:element>
+
+  <xs:complexType name="Observation_Information">
+    <xs:annotation>
+      <xs:documentation>The Observation_Information class provides
+        information about a science observation.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="mission_phase_name" type="phoenix:mission_phase_name" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="product_type" type="phoenix:product_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="product_version_id" type="phoenix:product_version_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_clock_start" type="phoenix:spacecraft_clock_start" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_clock_stop" type="phoenix:spacecraft_clock_stop" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="local_true_solar_time" type="phoenix:local_true_solar_time" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="sol_number" type="phoenix:sol_number" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="ops_token" type="phoenix:ops_token" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="ops_token_activity" type="phoenix:ops_token_activity" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="ops_token_payload" type="phoenix:ops_token_payload" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="ops_token_command" type="phoenix:ops_token_command" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="instument_mode_id" type="phoenix:instument_mode_id" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="phoenix:mission_phase_name = ('EXTENDED MISSION', 'PRIMARY MISSION')"/> -->
+    <!-- <xs:assert test="phoenix:product_type = ('EGA_AVG_CALLS', 'EGA_AVG_IDLE_CALLS', 'EGA_EMISSION_CUR', 'EGA_FILAMENT_1', 'EGA_FILAMENT_1_SEL', 'EGA_FILAMENT_2', 'EGA_FILAMENT_2_SEL', 'EGA_FILAMENT_CUR_1', 'EGA_FILAMENT_CUR_2', 'EGA_GEC_CUR', 'EGA_ION_PUMP_CUR', 'EGA_ION_PUMP_VOLT', 'EGA_MAGNET_TEMP_1', 'EGA_MAGNET_TEMP_2', 'EGA_MINUS_12_VOLT', 'EGA_MIN_CALLS', 'EGA_MIN_IDLE_CALLS', 'EGA_MULTIPLIER_VOLT', 'EGA_PLUS_12_VOLT', 'EGA_PLUS_5_VOLT', 'EGA_PROC_TEMP', 'EGA_STATUS_BITS', 'EGA_SWEEP_VOLT', 'EGA_SWEEP_VOLTAGE', 'EGA_TRAP_CUR', 'MECA-EM0', 'MECA-EM1', 'MECA-EM10', 'MECA-EM11', 'MECA-EM12', 'MECA-EM13', 'MECA-EM14', 'MECA-EM15', 'MECA-EM2', 'MECA-EM3', 'MECA-EM4', 'MECA-EM5', 'MECA-EM6', 'MECA-EM7', 'MECA-EM8', 'MECA-EM9', 'MECA_AFM_REPORT', 'MECA_AFM_SDD', 'MECA_AFM_SDR', 'MECA_TECP_EC', 'MECA_TECP_HUM', 'MECA_TECP_PRM', 'MECA_TECP_TC', 'MECA_WCL_COND', 'MECA_WCL_CP', 'MECA_WCL_CV', 'MECA_WCL_ISE', 'MECA_WCL_PT', 'MEM_OVEN_CUR', 'MEM_OVEN_ERR', 'MEM_OVEN_INT_HI', 'MEM_OVEN_INT_LO', 'MEM_OVEN_VOLT', 'MEM_OVEN_WIDTH', 'MEM_SHLD_CUR', 'MEM_SHLD_ERR', 'MEM_SHLD_INT_HI', 'MEM_SHLD_INT_LO', 'MEM_SHLD_VOLT', 'MEM_SHLD_WIDTH', 'MEM_T_WIDTH', 'TA_A2D_TEMP', 'TA_AGD_0_3', 'TA_AGD_3_1', 'TA_ANLG_MINUS_12_CUR', 'TA_ANLG_MINUS_12_VOLT', 'TA_ANLG_PLUS_12_CUR', 'TA_ANLG_PLUS_12_VOLT', 'TA_BUS_A_CUR', 'TA_BUS_A_VOLT', 'TA_BUS_B_CUR', 'TA_CAL_TANK_COLD_TEMP', 'TA_CAL_TANK_TEMP', 'TA_COVER_1_TEMP', 'TA_COVER_2_TEMP', 'TA_CPU_PLUS_5_CUR', 'TA_CPU_PLUS_5_VOLT', 'TA_CPU_TEMP', 'TA_EGA_BAKEOUT_TEMP', 'TA_EGA_CUR', 'TA_EGA_ELECT_BOX_TEMP', 'TA_EGA_GEC_TEMP', 'TA_EGA_MAN_TEMP', 'TA_EGA_PLUMB_TEMP', 'TA_FULL_DETECT', 'TA_FULL_DETECT_RAW', 'TA_INPUT_FUNNEL_1_LO_TEMP', 'TA_INPUT_FUNNEL_2_LO_TEMP', 'TA_MANIFOLD_PRES', 'TA_MANIFOLD_TEMP', 'TA_OUTLET_PRES', 'TA_OVEN_ERR', 'TA_OVEN_PLUS_15_CUR', 'TA_OVEN_PLUS_15_VOLT', 'TA_OVEN_TEMP', 'TA_PLUMBING_1_TEMP', 'TA_PLUMBING_2_TEMP', 'TA_PLUS_5_VREF', 'TA_PRES_SENSE_FD_BK', 'TA_PWR_CNTL_1_TEMP', 'TA_PWR_CNTL_2_TEMP', 'TA_PWR_SPLY_1_TEMP', 'TA_PWR_SPLY_2_TEMP', 'TA_SHIELD_PLUS_30_CUR', 'TA_SHIELD_PLUS_30_VOLT', 'TA_SHLD_ERR', 'TA_SHLD_TEMP', 'TA_TRANS_TUBE_TEMP', 'TA_T_HEATER_TEMP', 'TEGA_EGAEDR', 'TEGA_EGHEDR', 'TEGA_EGHRDR', 'TEGA_EGS', 'TEGA_E_KERNEL', 'TEGA_LEDEDR', 'TEGA_MSGEDR', 'TEGA_SC', 'TEGA_SCEDR')"/> -->
+    <!-- <xs:assert test="phoenix:instument_mode_id = ('CME', 'COND', 'COUPONS_TABLE', 'CP', 'CV', 'DOX', 'FRQTEST', 'ISES', 'N/A', 'PARAM_VALUE_TABLE', 'PT', 'PWR', 'SCAN', 'STATE_TABLE', 'TIPS_TABLE')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Phoenix_Parameters">
+    <xs:annotation>
+      <xs:documentation>The Phoenix_Parameters class is a superclass
+        containing all Phoenix mission classes.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Observation_Information" type="phoenix:Observation_Information" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+    <xs:annotation>
+      <xs:documentation>This section contains the simpleTypes that provide more constraints
+        than those at the base data type level. The simpleTypes defined here build on the base data
+        types. This is another component of the common dictionary and therefore falls within the
+        common namespace.
+      </xs:documentation>
+    </xs:annotation>
+
+  <xs:simpleType name="instument_mode_id">
+    <xs:annotation>
+      <xs:documentation>The instument_mode_id attribute identifies an
+        instrument-dependent designation of operating
+        mode.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="local_true_solar_time">
+    <xs:annotation>
+      <xs:documentation>The local_true_solar_time attribute is the local
+        true solar time, as defined in the main PDS4 data dictionary, at
+        the beginning of an observation.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mission_phase_name">
+    <xs:annotation>
+      <xs:documentation>The mission_phase_name identifies a time period
+        within the mission.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Preserved">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ops_token">
+    <xs:annotation>
+      <xs:documentation>The ops_token is a code associated with a
+        Phoenix data product that provides information about the command
+        sequence that caused the product to be acquired. The value is a
+        32-bit unsigned hexadecimal integer expressed in a PDS label as
+        16#AAAAPCCC#, where: - AAAA is the campaign ID assigned by the
+        sequence planning team, - P is a 4-bit payload ID reserved for
+        use by each instrument team, as defined by the team, and - CCC
+        is the command sequence number, which is set to zero for each
+        new campaign and automatically incremented with each command.
+        The combination of ops_token and sol number should uniquely
+        identify a Phoenix data product.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ops_token_activity">
+    <xs:annotation>
+      <xs:documentation>ops_token_activity is the 16-bit activity code
+        (campaign id) from the ops_token, represented as a 4-digit Hex
+        value.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ops_token_command">
+    <xs:annotation>
+      <xs:documentation>ops_token_command is the 12-bit command sequence
+        number of the ops token, represented as a 3-digit Hex
+        value.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ops_token_payload">
+    <xs:annotation>
+      <xs:documentation>ops_token_payload is the 4-bit payload id value
+        of the ops token, represented as a single Hex
+        digit.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="product_type">
+    <xs:annotation>
+      <xs:documentation>The product_type attribute identifies a group of
+        data products within a collection that have some property in
+        common. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="product_version_id">
+    <xs:annotation>
+      <xs:documentation>The product_version_id attribute identifies the
+        version of an individual data product. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="sol_number">
+    <xs:annotation>
+      <xs:documentation>The sol_number attibute is the number of the
+        Mars day on which an observation was acquired. Landing day is
+        Sol 0. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_start">
+    <xs:annotation>
+      <xs:documentation>The spacecraft_clock_start attribute provides
+        the value of the spacecraft clock at the beginning of a time
+        period of interest. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_stop">
+    <xs:annotation>
+      <xs:documentation>The spacecraft_clock_stop attribute provides the
+        value of the spacecraft clock at the end of a time period of
+        interest. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
